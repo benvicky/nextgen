@@ -1,0 +1,69 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    <span class="toolbar-title">E-Health</span>
+    
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="badgevisibilty()">
+        <mat-icon
+          matBadge="18"
+          [matBadgeHidden]="badgevisible"
+          matBadgeSize="small"
+          matBadgeColor="warn"
+          >notifications</mat-icon
+        >
+      </button>
+    
+</mat-toolbar>
+
+<mat-drawer-container autosize="">
+    <mat-drawer #drawer opened="true" mode="side">
+      <mat-nav-list>
+        <mat-list-item>
+          <button routerLink="patientdashboard/new-patient" (click)="redirectToNewPatient()"  mat-button><mat-icon>dashboard</mat-icon>Register Patient</button>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        <mat-list-item>
+          <button  (click)="redirectToViewPatient()"  mat-button><mat-icon>pages</mat-icon>View Patients</button>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        
+      </mat-nav-list>
+      <mat-nav-list>
+        <mat-list-item>
+          <button (click)="redirectToViewDataRecording()" mat-button><mat-icon>analytics</mat-icon>Data Recording</button>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        <mat-list-item>
+          <button (click)="redirectToViewMakeAppointment()" mat-button><mat-icon>people</mat-icon>Make Appointment</button>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        <mat-list-item>
+          <button (click)="redirectToViewNotification()" mat-button><mat-icon>notifications</mat-icon>Notification</button>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        <mat-list-item>
+          <button mat-button><mat-icon>pages</mat-icon>Games</button>
+        </mat-list-item>
+      </mat-nav-list>
+      <mat-nav-list>
+        <mat-list-item>
+          <button (click)="logout()" style="color: red;" mat-button><mat-icon>logout</mat-icon>Logout</button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div style="min-height: 600px; padding: 2%">
+        <!-- <app-home></app-home>
+        <app-input></app-input>
+        <app-autocomplete></app-autocomplete> -->
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>

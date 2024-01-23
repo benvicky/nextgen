@@ -1,0 +1,141 @@
+<section
+  class="hero"
+  aria-label="home"
+  id="home"
+  style="background-image: url('/assets/images/autism3.jpg')"
+>
+  <div class="container">
+    <div class="hero-content" style="align-content: end">
+      <h1 class="hero-title" style="font-size: 4em; color: white">
+        Welcome to the Autism Support Hub
+      </h1>
+      <h3 style="color: whitesmoke">
+        Empowering individuals with autism and their families
+      </h3>
+      <button routerLink="register" mat-raised-button color="primary">
+        Get Started
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="chatbot-wrapper" style="position: fixed; bottom: 20px; right: 20px; z-index: 100;">
+  <div class="chatbot-container">
+    <div class="chat-header">
+      <span class="text">Need Help?</span>
+      <i class="icon fa fa-question-circle"></i>
+    </div>
+    <div class="chatbot">
+      <input [(ngModel)]="userMessage" placeholder="Ask me anything..." />
+      <button (click)="sendMessage()">Send</button>
+      <div [innerHTML]="botResponseMessage"></div>
+    </div>
+  </div>
+</div>
+
+<section class="about" aria-label="about" id="about">
+  <div class="content">
+    <h2>About Us</h2>
+    <p>
+      We are dedicated to providing support and resources for individuals with
+      autism spectrum disorders and their families. Our mission is to create an
+      inclusive and understanding community.
+    </p>
+    <p>
+      We believe in fostering a sense of belonging and acceptance, where
+      individuals with autism and their families feel supported, valued, and
+      understood. Our team of dedicated professionals is committed to offering
+      compassionate guidance, equipping families with the tools and knowledge
+      they need to navigate the challenges of autism.
+    </p>
+    <p>
+      With evidence-based interventions, we aim to enhance communication
+      skills, promote independence, and nurture a sense of self-reliance within
+      our community. By organizing a wide range of community events,
+      workshops, and seminars, we provide opportunities for meaningful
+      connections and personal growth.
+    </p>
+  </div>
+</section>
+
+<section class="services" aria-label="services" id="services">
+  <div class="">
+    <h2 style="padding-top: 20px;">Our Services</h2>
+    <div class="service">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Therapeutic Programs</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          Customized programs to meet the unique needs of individuals with
+          autism. Our Therapeutic Programs are designed with a holistic
+          approach, addressing cognitive, social, and emotional development.
+          Through evidence-based interventions, we aim to enhance communication
+          skills, foster independence, establish self reliance, and promote a
+          sense of belonging within the community
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="service">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Family Support</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          Guidance and resources for families navigating the autism journey. Our
+          Family Support services extend a helping hand to parents and
+          caregivers, providing them with expert guidance and practical tools to
+          navigate the complexities of autism. We offer workshops, one-on-one
+          consultations, and a supportive network to ensure that families feel
+          empowered and well-equipped for their unique journey.
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="service">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Community Events</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          Engage with our community through events, workshops, and seminars. Our
+          Community Events are carefully curated to provide a platform for
+          individuals with autism, their families, and the broader community to
+          come together. From interactive workshops to informative seminars,
+          these events foster a sense of belonging and encourage meaningful
+          connections. Join us in creating a supportive and inclusive
+          environment for all.
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="footer-content">
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p>Email: E-health&#64;mail.com</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Address: 123 Street, City, Country</p>
+    </div>
+    <div class="quick-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="social-icons">
+      <h3>Follow Us</h3>
+      <a href="#"><mat-icon>facebook</mat-icon></a>
+      <a href="#"><mat-icon>tiktok</mat-icon></a>
+      <a href="#"><mat-icon>twitter</mat-icon></a>
+      <a href="#"><mat-icon>instagram</mat-icon></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 E-Health. All Rights Reserved.</p>
+  </div>
+</footer>

@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+  <span>Data Recording</span>
+</mat-toolbar>
+
+<form>
+  <div style="display: flex; flex-direction: row">
+    <div class="top" style="flex: 1">
+      <div class="row" style="padding-top: 10px">
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="row" style="padding-top: 10px">
+        <mat-form-field appearance="outline">
+          <mat-label>Allergies</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="row" style="padding-top: 10px">
+        <mat-form-field appearance="outline">
+          <mat-label>Treated</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="row" style="padding-top: 10px">
+        <mat-form-field appearance="outline">
+          <mat-label>Under Treatment</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="row" style="padding-top: 10px">
+        <mat-form-field appearance="outline">
+          <mat-label>Persistent</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div style="flex: 1">
+      <h2>Data Vizualization</h2>
+    </div>
+
+    <div style="flex: 1">
+      <h2>Select-Behavioural Type</h2>
+      <mat-checkbox color="primary">Object Sorting Task</mat-checkbox>
+      <mat-checkbox color="primary">Picture Categorization Task</mat-checkbox>
+      <mat-checkbox color="primary">Verbal Categorization Task</mat-checkbox>
+    </div>
+  </div>
+
+  <div style=" float: right; padding-right: 60px; ">
+    <button mat-raised-button color="primary">Save</button>
+  </div>
+</form>

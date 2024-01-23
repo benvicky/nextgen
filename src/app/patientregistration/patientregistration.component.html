@@ -1,0 +1,37 @@
+<app-menubar></app-menubar>
+<br><br>
+<mat-card class="card-class">
+    <mat-card-header>
+      <mat-card-title>New Patient Registration</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form class="example-form" [formGroup]="registerpatientform" (ngSubmit)="regUserdetails()">
+            <mat-form-field class="example-full-width">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Enter Name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Enter Email Address" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Username must be minimun of 5 characters" formControlName="username">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder=" Enter Password" formControlName="password">
+            </mat-form-field>
+            <div class="auth">
+                <button mat-raised-button type="submit" style="margin: 7px" color="primary" [disabled]="registerpatientform.invalid">Register</button>
+                <button mat-raised-button color="primary">Voice Recognition</button>
+              <button mat-raised-button color="primary">Face Identity</button>
+                <a (click)="redirecttoHome()" mat-raised-button style="margin: 7px" color="accent">Close</a>
+            </div>
+          </form>
+    </mat-card-content>
+    
+  </mat-card>
+
+  <router-outlet></router-outlet>

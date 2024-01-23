@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <span class="toolbar-title">E-Health</span>
+    
+    <button routerLink="" mat-button>Home</button>
+    <button mat-button>About</button>
+    <button mat-button>Services</button>
+    <button mat-button>Resources</button>
+    <button mat-button>Contact Us</button>
+    <button mat-button>Blog</button>
+
+    <span class="example-spacer"></span>
+    <button routerLink="register" (click)="redirecttoRegister()" mat-button>Register</button>
+    <button routerLink="login" (click)="redirecttoLogin()"  mat-button>Login</button>
+    
+</mat-toolbar>
+
+
+
+<router-outlet></router-outlet>  

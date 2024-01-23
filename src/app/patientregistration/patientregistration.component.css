@@ -1,0 +1,31 @@
+.card-class {
+    width: 600px; 
+    margin: auto; 
+    border-radius: 10px; 
+  }
+  
+  .example-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px; 
+  }
+  
+  .example-full-width {
+    width: 100%;
+    margin-bottom: 5px; 
+  }
+  
+  .auth {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  button,
+  a {
+    margin: 7px;
+  }
+
+
+  

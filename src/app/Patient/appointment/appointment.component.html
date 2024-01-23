@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+    <span>Appointment</span>
+</mat-toolbar>
+
+
+<div>
+    <h1>Create Appointment </h1>
+</div>
+
+<form [formGroup]="docAppointmentform" (ngSubmit)="createappointment()">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Patient Name</mat-label>
+            <input matInput type="text" formControlName="fullname">
+        </mat-form-field>
+
+    </div>
+    <div class="date">
+        <mat-form-field>
+            <mat-label>Previous Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="olddate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field style="padding-left: 40px;">
+            <mat-label>Choose New Appointment</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="newdate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Individual Treatment Planning</mat-label>
+            <textarea matInput type="text" formControlName="treatment"></textarea>
+        </mat-form-field>
+        <mat-form-field style="padding-left: 40px;" appearance="outline">
+            <mat-label>Progress Monitoring</mat-label>
+            <textarea matInput type="text" formControlName="monitoring"></textarea>
+        </mat-form-field>
+    </div>
+
+
+
+    <div class="action">
+        <button mat-raised-button type="submit" color="primary" [disabled]="docAppointmentform.invalid">Save</button>
+    </div>
+</form>

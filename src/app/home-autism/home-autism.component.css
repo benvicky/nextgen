@@ -1,0 +1,195 @@
+ .about, .services {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    text-align: right;
+    max-width: 85%; 
+  }
+  
+  .hero-title {
+    font-size: 2.9em; 
+    line-height: 1.2; 
+  }
+  
+  
+  
+  /* .content {
+    max-width: 800px;
+    margin: 0 auto;
+  } */
+
+.about {
+  background-color: #f8f8f8; 
+}
+
+.content {
+  max-width: 800px; 
+  margin: 0 auto; /* Center the content */
+  padding: 50px 20px; 
+  text-align: center; 
+}
+
+h2 {
+  font-size: 3em; 
+  color: #333; 
+  margin-bottom: 20px; 
+}
+
+p {
+  font-size: 1.5em; /* Adjust the font size */
+  color: #555; /* Use a slightly darker color for the text */
+  margin-bottom: 20px; /* Add spacing between paragraphs */
+}
+
+.service{
+  margin: 3%;
+  width: 25%;
+  float: left;
+  margin-left: 5%;
+  padding-bottom: 30px;
+  font-size: 1.1rem;
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.service mat-card {
+  width: 300px; 
+  height: 480px; 
+}
+
+mat-card-content {
+  height: 350px; /* Sspecific height for the content */
+  overflow: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+mat-card-title {
+  font-size: 2em; 
+  color: #333;
+  margin-bottom: 10px;
+}
+
+  
+  button {
+    margin-top: 10px;
+  }
+  
+
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 30px 0;
+  color: #333;
+  clear: both; 
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+}
+
+.contact-info,
+.quick-links,
+.social-icons {
+  flex: 1 1 calc(33.33% - 20px); /* Adjust the width of each section */
+  margin-bottom: 30px; /* Add some space between sections */
+}
+
+.contact-info h3,
+.quick-links h3,
+.social-icons h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #555;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+  
+@media screen and (max-width: 940px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+} 
+
+.chatbot-wrapper {
+  background-color: lightskyblue;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chatbot button {
+  background-color: #3fa4eb;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 8px 10px;
+  font-size: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.chatbot input {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 14px;
+ width: 60%;
+}

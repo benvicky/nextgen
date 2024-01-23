@@ -1,0 +1,44 @@
+<app-menubar></app-menubar>
+
+<mat-card class="card-class">
+    <mat-card-header>
+        <mat-card-title>New Staff Registration</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <img mat-card-sm-image src="https://angular.io/generated/images/marketing/concept-icons/animations.png" />
+        <p>
+            Registration for new staffs in E Health Facility
+        </p>
+        <div class="auth">
+            <button mat-raised-button  routerLink="staffregistration" (click)="redirectToStaffRegistration()" type="submit" style="margin: 7px" color="accent">Register</button>
+        </div>
+
+    </mat-card-content>
+
+</mat-card>
+
+<mat-card class="card-class">
+    <mat-card-header>
+        <mat-card-title>New Patient Registration</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <img mat-card-sm-image src="https://angular.io/generated/images/marketing/concept-icons/animations.png" />
+        <p>
+            Registration for new patients in E Health Facility
+        </p>
+        <div class="auth">
+            <button mat-raised-button routerLink="patientregistration"  (click)="redirectToPatientRegistration()" type="submit" style="margin: 7px" color="accent">Register</button>
+        </div>
+
+    </mat-card-content>
+
+</mat-card>
+
+
+
+
+
+
+<router-outlet></router-outlet>

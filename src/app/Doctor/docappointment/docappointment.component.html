@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+    <span>Appointments</span>
+</mat-toolbar>
+
+<div>
+    <mat-card class="main">
+        <mat-card-header>
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="filter($event)" placeholder="Enter the text">
+            </mat-form-field>
+        </mat-card-header>
+
+        <mat-card-content>
+            <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="id">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef="">ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+                <ng-container matColumnDef="fullname">
+                    <th mat-header-cell *matHeaderCellDef="">Patient Name</th>
+                    <td mat-cell *matCellDef="let element">{{element.fullname}}</td>
+                </ng-container>
+                <ng-container matColumnDef="olddate">
+                    <th mat-header-cell *matHeaderCellDef="">Previous Date</th>
+                    <td mat-cell *matCellDef="let element">{{element.olddate | date}}</td>
+                </ng-container>
+                <ng-container matColumnDef="newdate">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef="">Appointment Date</th>
+                    <td mat-cell *matCellDef="let element">{{element.newdate | date}}</td>
+                </ng-container>
+                <ng-container matColumnDef="treatment">
+                    <th mat-header-cell *matHeaderCellDef="">Treatment</th>
+                    <td mat-cell *matCellDef="let element">{{element.treatment}}</td>
+                </ng-container>
+                <ng-container matColumnDef="monitoring">
+                    <th mat-header-cell *matHeaderCellDef="">Progress Monitoring</th>
+                    <td mat-cell *matCellDef="let element">{{element.monitoring}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef="">Action</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="warn" (click)="deleteAppointment(element.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
+            </table>
+        </mat-card-content>
+        <br>
+        <mat-card-footer>
+            <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+        </mat-card-footer>
+    </mat-card>
+</div>

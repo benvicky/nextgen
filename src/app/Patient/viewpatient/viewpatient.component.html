@@ -1,0 +1,68 @@
+<mat-toolbar color="primary">
+    <span>Patient List</span>
+    
+</mat-toolbar>
+
+<mat-card class="main">
+    <mat-card-header>
+        <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="filter($event)" placeholder="Enter the text">
+        </mat-form-field>
+    </mat-card-header>
+    <mat-card-content>
+        <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+            <ng-container matColumnDef="id">
+                <th mat-sort-header mmat-header-cell *matHeaderCellDef="">ID</th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+            </ng-container>
+            <ng-container matColumnDef="firstname">
+                <th mmat-header-cell *matHeaderCellDef="">First Name</th>
+                <td mat-cell *matCellDef="let element">{{element.firstname}}</td>
+            </ng-container>
+            <ng-container matColumnDef="lastname">
+                <th mmat-header-cell *matHeaderCellDef="">Last Name</th>
+                <td mat-cell *matCellDef="let element">{{element.lastname}}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <th mmat-header-cell *matHeaderCellDef="">Email</th>
+                <td mat-cell *matCellDef="let element">{{element.email}}</td>
+            </ng-container>
+            <ng-container matColumnDef="dob">
+                <th mmat-header-cell *matHeaderCellDef="">Date of Birth</th>
+                <td mat-cell *matCellDef="let element">{{element.dob | date}}</td>
+            </ng-container>
+            <ng-container matColumnDef="gender">
+                <th mmat-header-cell *matHeaderCellDef="">Gender</th>
+                <td mat-cell *matCellDef="let element">{{element.gender}}</td>
+            </ng-container>
+            <ng-container matColumnDef="healthinsurancenumber">
+                <th mmat-header-cell *matHeaderCellDef="">Insurance Number</th>
+                <td mat-cell *matCellDef="let element">{{element.healthinsurancenumber}}</td>
+            </ng-container>
+            <ng-container matColumnDef="contact">
+                <th mmat-header-cell *matHeaderCellDef="">Contact</th>
+                <td mat-cell *matCellDef="let element">{{element.contact}}</td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <th mmat-header-cell *matHeaderCellDef="">Action</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="primary" (click)="openeditpatientform(element)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="deletePatient(element.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr mat-row *matRowDef="let row,columns:displayColumns"></tr>
+        </table>
+    </mat-card-content>
+    <br>
+    <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+    </mat-card-footer>
+</mat-card>
