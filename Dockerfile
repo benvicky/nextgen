@@ -1,39 +1,19 @@
-# Use an official Node.js runtime as a parent image
-FROM node:20.9.0 AS build
-
-# Set the working directory
-WORKDIR /usr/src/app
-
-# Copy package.json and package-lock.json to install dependencies
+# Stage 1: Build Angular App
+FROM node:20.9.0-alpine AS build
+WORKDIR /app
 COPY package*.json ./
-
-# Install Angular dependencies
 RUN npm install
-
-# Copy the rest of the Angular application files
+RUN npx ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points
 COPY . .
+RUN npm run build
 
-# Build the Angular app
-RUN npm run build --prod
-
-# Use a smaller Node.js image for the final image
+# Stage 2: Serve Angular App using http-server
 FROM node:20.9.0-alpine
+WORKDIR /app
+RUN npm install -g http-server json-server
+COPY --from=build /app/dist/nextgen /app/dist/nextgen
+COPY db.json .
+EXPOSE 4200 3000
 
-# Set the working directory
-WORKDIR /usr/src/app
-
-# Install JSON Server globally
-RUN npm install -g json-server
-
-# Copy the built Angular app from the previous stage
-COPY --from=build /usr/src/app/dist /usr/src/app/dist
-
-# Copy the JSON Server data from the root directory
-COPY db.json /usr/src/app/db.json
-
-# Expose port 80 for Angular app and port 3000 for JSON Server
-EXPOSE 80
-EXPOSE 3000
-
-# Start JSON Server and Angular app
-CMD ["json-server", "--watch", "db.json", "--port", "3000", "&", "npm", "start"]
+# Use && to run multiple commands in a single CMD
+CMD sh -c "json-server --watch db.json --port 3000 --host 0.0.0.0 & http-server /app/dist/nextgen -p 4200 -a 0.0.0.0" 
